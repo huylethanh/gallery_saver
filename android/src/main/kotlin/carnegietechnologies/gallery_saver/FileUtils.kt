@@ -288,6 +288,7 @@ internal object FileUtils {
     private fun getAlbumFolderPath(folderName: String?, mediaType: MediaType): String {
         Log.e("------------------------------------GallerySaver", folderName +"")
         var albumFolderPath: String = Environment.getExternalStorageDirectory().path
+        Log.e("------------------------------------GallerySaver", albumFolderPath +"")
         albumFolderPath = if (TextUtils.isEmpty(folderName)) {
             val baseFolderName = if (mediaType == MediaType.image)
                 Environment.DIRECTORY_PICTURES else
@@ -296,6 +297,7 @@ internal object FileUtils {
                 Environment.getExternalStoragePublicDirectory(baseFolderName).path
             ) ?: albumFolderPath
         } else {
+            Log.e("------------------------------------GallerySaver", albumFolderPath + File.separator + folderName)
             createDirIfNotExist(albumFolderPath + File.separator + folderName)
                 ?: albumFolderPath
         }
