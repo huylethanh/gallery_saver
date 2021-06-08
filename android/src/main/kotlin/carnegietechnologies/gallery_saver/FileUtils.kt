@@ -298,6 +298,7 @@ internal object FileUtils {
             createDirIfNotExist(albumFolderPath + File.separator + folderName)
                 ?: albumFolderPath
         }
+        Log.e("------------------------------------GallerySaver", albumFolderPath)
         return albumFolderPath
     }
 
