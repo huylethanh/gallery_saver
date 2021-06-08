@@ -306,11 +306,14 @@ internal object FileUtils {
     }
 
     private fun createDirIfNotExist(dirPath: String): String? {
+        Log.e("------------------------------------GallerySaver dirPath", dirPath)
         val dir = File(dirPath)
         if (!dir.exists()) {
+            Log.e("------------------------------------GallerySaver not exitst dirPath", dirPath)
             if (dir.mkdirs()) {
                 return dir.path
             } else {
+                Log.e("------------------------------------GallerySaver cannort create new anc", dirPath)
                 return null
             }
         } else {
